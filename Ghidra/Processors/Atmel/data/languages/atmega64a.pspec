@@ -31,31 +31,31 @@
     <symbol name="INT6"          address="code:0x000E" entry="true" description="External Interrupt Request 6"/>
     <symbol name="INT7"          address="code:0x0010" entry="true" description="External Interrupt Request 7"/>
     <symbol name="TIMER2_COMP"   address="code:0x0012" entry="true" description="Timer/Counter2 Compare Match"/>
-    <symbol name="TIMER2_OVF"    address="code:0x0014" entry="true" description=""/>
-    <symbol name="TIMER1_CAPT "  address="code:0x0016" entry="true" description=""/>
-    <symbol name="TIMER1_COMPA"  address="code:0x0018" entry="true" description=""/>
-    <symbol name="TIMER1_COMPB"  address="code:0x001A" entry="true" description=""/>
-    <symbol name="TIMER1_OVF"    address="code:0x001C" entry="true" description=""/>
-    <symbol name="TIMER0_COMP "  address="code:0x001E" entry="true" description=""/>
-    <symbol name="TIMER0_OVF"    address="code:0x0020" entry="true" description=""/>
-    <symbol name="SPI_STC "      address="code:0x0022" entry="true" description=""/>
-    <symbol name="USART0_RX "    address="code:0x0024" entry="true" description=""/>
-    <symbol name="USART0_UDRE"   address="code:0x0026" entry="true" description=""/>
-    <symbol name="USART0_TX "    address="code:0x0028" entry="true" description=""/>
-    <symbol name="ADC"           address="code:0x002A" entry="true" description=""/>
-    <symbol name="EE_READY"      address="code:0x002C" entry="true" description=""/>
-    <symbol name="ANALOG_COMP"   address="code:0x002E" entry="true" description=""/>
-    <symbol name="TIMER1_COMPC"  address="code:0x0030" entry="true" description=""/>
-    <symbol name="TIMER3_CAPT"   address="code:0x0032" entry="true" description=""/>
-    <symbol name="TIMER3_COMPA"  address="code:0x0034" entry="true" description=""/>
-    <symbol name="TIMER3_COMPB"  address="code:0x0036" entry="true" description=""/>
-    <symbol name="TIMER3_COMPC " address="code:0x0038" entry="true" description=""/>
-    <symbol name="TIMER3_OVF"    address="code:0x003A" entry="true" description=""/>
-    <symbol name="USART1_RX"     address="code:0x003C" entry="true" description=""/>
-    <symbol name="USART1_UDRE"   address="code:0x003E" entry="true" description=""/>
-    <symbol name="USART1_TX"     address="code:0x0040" entry="true" description=""/>
-    <symbol name="TWI"           address="code:0x0042" entry="true" description=""/>
-    <symbol name="SPM_READY"     address="code:0x0044" entry="true" description=""/>
+    <symbol name="TIMER2_OVF"    address="code:0x0014" entry="true" description="Timer/Counter2 Overflow"/>
+    <symbol name="TIMER1_CAPT"   address="code:0x0016" entry="true" description="Timer/Counter1 Capture Event"/>
+    <symbol name="TIMER1_COMPA"  address="code:0x0018" entry="true" description="Timer/Counter1 Compare Match A"/>
+    <symbol name="TIMER1_COMPB"  address="code:0x001A" entry="true" description="Timer/Counter1 Compare Match B"/>
+    <symbol name="TIMER1_OVF"    address="code:0x001C" entry="true" description="Timer/Counter1 Overflow"/>
+    <symbol name="TIMER0_COMP"   address="code:0x001E" entry="true" description="Timer/Counter0 Compare Match"/>
+    <symbol name="TIMER0_OVF"    address="code:0x0020" entry="true" description="Timer/Counter0 Overflow"/>
+    <symbol name="SPI_STC"       address="code:0x0022" entry="true" description="SPI Serial Transfer Complete"/>
+    <symbol name="USART0_RX"     address="code:0x0024" entry="true" description="USART0, Rx Complete"/>
+    <symbol name="USART0_UDRE"   address="code:0x0026" entry="true" description="USART0 Data Register Empty"/>
+    <symbol name="USART0_TX"     address="code:0x0028" entry="true" description="USART0, Tx Complete"/>
+    <symbol name="ADC"           address="code:0x002A" entry="true" description="ADC Conversion Complete"/>
+    <symbol name="EE_READY"      address="code:0x002C" entry="true" description="EEPROM Ready"/>
+    <symbol name="ANALOG_COMP"   address="code:0x002E" entry="true" description="Analog Comparator"/>
+    <symbol name="TIMER1_COMPC"  address="code:0x0030" entry="true" description="Timer/Counter1 Compare Match C"/>
+    <symbol name="TIMER3_CAPT"   address="code:0x0032" entry="true" description="Timer/Counter3 Capture Even"/>
+    <symbol name="TIMER3_COMPA"  address="code:0x0034" entry="true" description="Timer/Counter3 Compare Match A"/>
+    <symbol name="TIMER3_COMPB"  address="code:0x0036" entry="true" description="Timer/Counter3 Compare Match B"/>
+    <symbol name="TIMER3_COMPC"  address="code:0x0038" entry="true" description="Timer/Counter3 Compare Match C"/>
+    <symbol name="TIMER3_OVF"    address="code:0x003A" entry="true" description="Timer/Counter3 Overflow"/>
+    <symbol name="USART1_RX"     address="code:0x003C" entry="true" description="USART1, Rx Complete"/>
+    <symbol name="USART1_UDRE"   address="code:0x003E" entry="true" description="USART1 Data Register Empty"/>
+    <symbol name="USART1_TX"     address="code:0x0040" entry="true" description="USART1, Tx Complete"/>
+    <symbol name="TWI"           address="code:0x0042" entry="true" description="Two-wire Serial Interface"/>
+    <symbol name="SPM_READY"     address="code:0x0044" entry="true" description="Store Program Memory Ready"/>
     <!-- Core -->
     <symbol name="SREG"   address="mem:0x5F" description="AVR Status Register"/>
     <symbol name="SPH"    address="mem:0x5E" description="Stack Pointer High Byte"/>
