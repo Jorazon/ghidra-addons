@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8160-8-bit-AVR-Microcontroller-ATmega64A-datasheet.pdf -->
+
+<processor_spec>
+  <programcounter register="PC"/> 
+  <data_space space="mem"/>
+  
+  <context_data>
+    <tracked_set space="code">
+      <set name="SREG" val="0"/>
+    </tracked_set>
+  </context_data>
+
+  <default_memory_blocks>
+    <!-- General-purpose registers (32 bytes) -->
+    <memory_block name="registers" start_address="mem:0x0000" length="0x0020" initialized="false"/>
+    <!-- I/O registers (64 bytes) -->
+    <memory_block name="io" start_address="mem:0x0020" length="0x0040" initialized="false"/>
+  </default_memory_blocks>
+  
+  <default_symbols>
+    <!-- Interrupt Vectors -->
+    <symbol name="RESET"         address="code:0x0000" entry="true" description="External Pin, Power-on Reset, Brown-out Reset, and Watchdog Reset"/>
+    <symbol name="INT0"          address="code:0x0002" entry="true" description="External Interrupt Request 0"/>
+    <symbol name="INT1"          address="code:0x0004" entry="true" description="External Interrupt Request 1"/>
+    <symbol name="INT2"          address="code:0x0006" entry="true" description="External Interrupt Request 2"/>
+    <symbol name="INT3"          address="code:0x0008" entry="true" description="External Interrupt Request 3"/>
+    <symbol name="INT4"          address="code:0x000A" entry="true" description="External Interrupt Request 4"/>
+    <symbol name="INT5"          address="code:0x000C" entry="true" description="External Interrupt Request 5"/>
+    <symbol name="INT6"          address="code:0x000E" entry="true" description="External Interrupt Request 6"/>
+    <symbol name="INT7"          address="code:0x0010" entry="true" description="External Interrupt Request 7"/>
+    <symbol name="TIMER2_COMP"   address="code:0x0012" entry="true" description="Timer/Counter2 Compare Match"/>
+    <symbol name="TIMER2_OVF"    address="code:0x0014" entry="true" description=""/>
+    <symbol name="TIMER1_CAPT "  address="code:0x0016" entry="true" description=""/>
+    <symbol name="TIMER1_COMPA"  address="code:0x0018" entry="true" description=""/>
+    <symbol name="TIMER1_COMPB"  address="code:0x001A" entry="true" description=""/>
+    <symbol name="TIMER1_OVF"    address="code:0x001C" entry="true" description=""/>
+    <symbol name="TIMER0_COMP "  address="code:0x001E" entry="true" description=""/>
+    <symbol name="TIMER0_OVF"    address="code:0x0020" entry="true" description=""/>
+    <symbol name="SPI_STC "      address="code:0x0022" entry="true" description=""/>
+    <symbol name="USART0_RX "    address="code:0x0024" entry="true" description=""/>
+    <symbol name="USART0_UDRE"   address="code:0x0026" entry="true" description=""/>
+    <symbol name="USART0_TX "    address="code:0x0028" entry="true" description=""/>
+    <symbol name="ADC"           address="code:0x002A" entry="true" description=""/>
+    <symbol name="EE_READY"      address="code:0x002C" entry="true" description=""/>
+    <symbol name="ANALOG_COMP"   address="code:0x002E" entry="true" description=""/>
+    <symbol name="TIMER1_COMPC"  address="code:0x0030" entry="true" description=""/>
+    <symbol name="TIMER3_CAPT"   address="code:0x0032" entry="true" description=""/>
+    <symbol name="TIMER3_COMPA"  address="code:0x0034" entry="true" description=""/>
+    <symbol name="TIMER3_COMPB"  address="code:0x0036" entry="true" description=""/>
+    <symbol name="TIMER3_COMPC " address="code:0x0038" entry="true" description=""/>
+    <symbol name="TIMER3_OVF"    address="code:0x003A" entry="true" description=""/>
+    <symbol name="USART1_RX"     address="code:0x003C" entry="true" description=""/>
+    <symbol name="USART1_UDRE"   address="code:0x003E" entry="true" description=""/>
+    <symbol name="USART1_TX"     address="code:0x0040" entry="true" description=""/>
+    <symbol name="TWI"           address="code:0x0042" entry="true" description=""/>
+    <symbol name="SPM_READY"     address="code:0x0044" entry="true" description=""/>
+    <!-- Core -->
+    <symbol name="SREG"   address="mem:0x5F" description="AVR Status Register"/>
+    <symbol name="SPH"    address="mem:0x5E" description="Stack Pointer High Byte"/>
+    <symbol name="SPL"    address="mem:0x5D" description="Stack Pointer Low Byte"/>
+    <!-- Memories -->
+    <symbol name="EEARL"  address="mem:0x3E" description="EEPROM Address Register Low Byte"/>
+    <symbol name="EEARH"  address="mem:0x3F" description="EEPROM Address Register High Byte"/>
+    <symbol name="EEDR"   address="mem:0x3D" description="EEPROM Data Register"/>
+    <symbol name="EECR"   address="mem:0x3C" description="EEPROM Control Register"/>
+    <symbol name="XMCRA"  address="mem:0x6D" description="External Memory Control Register A"/>
+    <symbol name="XMCRB"  address="mem:0x6C" description="External Memory Control Register B"/>
+    <!-- Clock -->
+    <symbol name="XDIV"   address="mem:0x5C" description="XTAL Divide Control Register"/>
+    <symbol name="OSCCAL" address="mem:0x51" description="Oscillator Calibration Register"/>
+    <!-- System Control -->
+    <symbol name="MCUCR"  address="mem:0x55" description="MCU Control Register"/>
+    <symbol name="MCUCSR" address="mem:0x54" description="MCU Control and Status Register"/>
+    <symbol name="WDTCR"  address="mem:0x41" description="Watchdog Timer Control Register"/>
+    <!-- External Interrupt Registers -->
+    <symbol name="EICRA"  address="mem:0x6A" description="External Interrupt Control Register A"/>
+    <symbol name="EICRB"  address="mem:0x5A" description="External Interrupt Control Register B"/>
+    <symbol name="EIMSK"  address="mem:0x59" description="External Interrupt Mask Register"/>
+    <symbol name="EIFR"   address="mem:0x58" description="External Interrupt Flag Register"/>
+    <!-- I/O Ports -->
+    <symbol name="SFIOR"  address="mem:0x40" description="Special Function IO Register"/>
+    <symbol name="PORTA"  address="mem:0x3B" description="Port A Data Register"/>
+    <symbol name="DDRA"   address="mem:0x3A" description="Port A Data Direction Register"/>
+    <symbol name="PINA"   address="mem:0x39" description="Port A Input Pins Address"/>
+    <symbol name="PORTB"  address="mem:0x38" description="Port B Data Register"/>
+    <symbol name="DDRB"   address="mem:0x37" description="Port B Data Direction Register"/>
+    <symbol name="PINB"   address="mem:0x36" description="Port B Input Pins Address"/>
+    <symbol name="PORTC"  address="mem:0x35" description="Port C Data Register"/>
+    <symbol name="DDRC"   address="mem:0x34" description="Port C Data Direction Register"/>
+    <symbol name="PINC"   address="mem:0x33" description="Port C Input Pins Address"/>
+    <symbol name="PORTD"  address="mem:0x32" description="Port D Data Register"/>
+    <symbol name="DDRD"   address="mem:0x31" description="Port D Data Direction Register"/>
+    <symbol name="PIND"   address="mem:0x30" description="Port D Input Pins Address"/>
+    <symbol name="PORTE"  address="mem:0x23" description="Port E Data Register"/>
+    <symbol name="DDRE"   address="mem:0x22" description="Port E Data Direction Register"/>
+    <symbol name="PINE"   address="mem:0x21" description="Port E Input Pins Address"/>
+    <symbol name="PORTF"  address="mem:0x62" description="Port F Data Register"/>
+    <symbol name="DDRF"   address="mem:0x61" description="Port F Data Direction Register"/>
+    <symbol name="PINF"   address="mem:0x20" description="Port F Input Pins Address"/>
+    <symbol name="PORTG"  address="mem:0x65" description="Port G Data Register"/>
+    <symbol name="DDRG"   address="mem:0x64" description="Port G Data Direction Register"/>
+    <symbol name="PING"   address="mem:0x63" description="Port G Input Pins Address"/>
+    <!-- 16 bit Timer/Counter 1 & 3 -->
+    <symbol name="TCCR1A" address="mem:0x4F" description="Timer/Counter1 Control Register A"/>
+    <symbol name="TCCR3A" address="mem:0x8B" description="Timer/Counter3 Control Register A"/>
+    <symbol name="TCCR1B" address="mem:0x4E" description="Timer/Counter1 Control Register B"/>
+    <symbol name="TCCR3B" address="mem:0x8A" description="Timer/Counter3 Control Register B"/>
+    <symbol name="TCCR1C" address="mem:0x7A" description="Timer/Counter1 Control Register C"/>
+    <symbol name="TCCR3C" address="mem:0x8C" description="Timer/Counter3 Control Register C"/>
+    <symbol name="TCNT1L" address="mem:0x4C" description="Timer/Counter1 Low byte"/>
+    <symbol name="TCNT1H" address="mem:0x4D" description="Timer/Counter1 Low byte"/>
+    <symbol name="TCNT3L" address="mem:0x88" description="Timer/Counter3 High byte"/>
+    <symbol name="TCNT3H" address="mem:0x89" description="Timer/Counter3 High byte"/>
+    <symbol name="OCR1AL" address="mem:0x4A" description="Output Compare Register 1 A Low byte"/>
+    <symbol name="OCR1AH" address="mem:0x4B" description="Output Compare Register 1 A High byte"/>
+    <symbol name="OCR1BL" address="mem:0x48" description="Output Compare Register 1 B Low byte"/>
+    <symbol name="OCR1BH" address="mem:0x49" description="Output Compare Register 1 B High byte"/>
+    <symbol name="OCR1CL" address="mem:0x78" description="Output Compare Register 1 C Low byte"/>
+    <symbol name="OCR1CH" address="mem:0x79" description="Output Compare Register 1 C High byte"/>
+    <symbol name="OCR3AL" address="mem:0x86" description="Output Compare Register 3 A Low byte"/>
+    <symbol name="OCR3AH" address="mem:0x87" description="Output Compare Register 3 A High byte"/>
+    <symbol name="OCR3BL" address="mem:0x84" description="Output Compare Register 3 B Low byte"/>
+    <symbol name="OCR3BH" address="mem:0x85" description="Output Compare Register 3 B High byte"/>
+    <symbol name="OCR3CL" address="mem:0x82" description="Output Compare Register 3 C Low byte"/>
+    <symbol name="OCR3CH" address="mem:0x83" description="Output Compare Register 3 C High byte"/>
+    <symbol name="ICR1L"  address="mem:0x46" description="Input Capture Register 1 Low byte"/>
+    <symbol name="ICR1H"  address="mem:0x47" description="Input Capture Register 1 High byte"/>
+    <symbol name="ICR3L"  address="mem:0x80" description="Input Capture Register 3 Low byte"/>
+    <symbol name="ICR3H"  address="mem:0x81" description="Input Capture Register 3 High byte"/>
+    <symbol name="TIMSK"  address="mem:0x57" description="Timer/Counter Interrupt Mask Register"/>
+    <symbol name="ETIMSK" address="mem:0x7D" description="Extended Timer/Counter Interrupt Mask Register"/>
+    <symbol name="TIFR"   address="mem:0x56" description="Timer/Counter Interrupt Flag Register"/>
+    <symbol name="ETIFR"  address="mem:0x7C" description="Extended Timer/Counter Interrupt Flag Register"/>
+    <!-- 8-bit Timer/Counter 0 & 2 -->
+    <symbol name="TCCR0"  address="mem:0x53" description="Timer/Counter0 Control Register"/>
+    <symbol name="TCNT0"  address="mem:0x52" description="Timer/Counter0 Register"/>
+    <symbol name="OCR0"   address="mem:0x51" description="Output Compare Register 0"/>
+    <symbol name="TIFR"   address="mem:0x56" description="Timer/Counter Interrupt Flag Register"/>
+    <symbol name="TCCR2"  address="mem:0x45" description="Timer/Counter2 Control Register"/>
+    <symbol name="TCNT2"  address="mem:0x44" description="Timer/Counter2 Register"/>
+    <symbol name="OCR2"   address="mem:0x43" description="Output Compare Register 2"/>
+    <symbol name="ASSR"   address="mem:0x50" description="Asynchronous Status Register"/>
+    <!-- SPI -->
+    <symbol name="SPCR"   address="mem:0x2D" description="SPI Control Register"/>
+    <symbol name="SPSR"   address="mem:0x2E" description="SPI Status Register"/>
+    <symbol name="SPDR"   address="mem:0x2F" description="SPI Data Register"/>
+    <!-- USART -->
+    <symbol name="UDR0"   address="mem:0x2C" description="USART 0 I/O Data Register"/>
+    <symbol name="UCSR0A" address="mem:0x2B" description="USART 0 Control and Status Register A"/>
+    <symbol name="UCSR0B" address="mem:0x2A" description="USART 0 Control and Status Register B"/>
+    <symbol name="UCSR0C" address="mem:0x95" description="USART 0 Control and Status Register C"/>
+    <symbol name="UBRR0L" address="mem:0x29" description="USART 0 Baud Rate Register Low byte"/>
+    <symbol name="UBBR0H" address="mem:0x90" description="USART 0 Baud Rate Register High byte"/>
+    <symbol name="UDR1"   address="mem:0x9C" description="USART 1 I/O Data Register"/>
+    <symbol name="UCSR1A" address="mem:0x9B" description="USART 1 Control and Status Register A"/>
+    <symbol name="UCSR1B" address="mem:0x9A" description="USART 1 Control and Status Register B"/>
+    <symbol name="UCSR1C" address="mem:0x9D" description="USART 1 Control and Status Register C"/>
+    <symbol name="UBRR1L" address="mem:0x99" description="USART 1 Baud Rate Register Low byte"/>
+    <symbol name="UBBR1H" address="mem:0x98" description="USART 1 Baud Rate Register High byte"/>
+    <!-- TWI -->
+    <symbol name="TWBR"   address="mem:0x70" description="TWI Bit Rate Register"/>
+    <symbol name="TWCR"   address="mem:0x74" description="TWI Control Register"/>
+    <symbol name="TWSR"   address="mem:0x71" description="TWI Status Register"/>
+    <symbol name="TWDR"   address="mem:0x73" description="TWI Data Register"/>
+    <symbol name="TWAR"   address="mem:0x72" description="TWI Slave Address Register"/>
+    <!-- Analog Comparator -->
+    <symbol name="ACSR"   address="mem:0x28" description="Analog Comparator Control and Status Register"/>
+    <!-- ADC -->
+    <symbol name="ADMUX"  address="mem:0x27" description="ADC Multiplexer Selection Register"/>
+    <symbol name="ADCSRA" address="mem:0x26" description="ADC Control and Status Register A"/>
+    <symbol name="ADCL"   address="mem:0x24" description="ADC Data Register Low byte"/>
+    <symbol name="ADCH"   address="mem:0x25" description="ADC Data Register High byte"/>
+    <symbol name="ADCSRB" address="mem:0x8E" description="ADC Control and Status Register B"/>
+    <!-- JTAG -->
+    <symbol name="OCDR"   address="mem:0x42" description="On-chip Debug Register"/>
+    <!-- Boot Loader -->
+    <symbol name="SPMCSR" address="mem:0x68" description="Store Program Memory Control and Status Register"/>
+  </default_symbols>
+
+</processor_spec>
