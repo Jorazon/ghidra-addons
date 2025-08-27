@@ -16,7 +16,7 @@
     <!-- General-purpose registers (32 bytes) -->
     <memory_block name="registers" start_address="mem:0x0000" length="0x0020" initialized="false"/>
     <!-- I/O registers (64 bytes) -->
-    <memory_block name="io" start_address="mem:0x0020" length="0x0079" initialized="false"/>
+    <memory_block name="io" start_address="mem:0x0020" length="0x0080" initialized="false"/>
   </default_memory_blocks>
   
   <default_symbols>
@@ -180,4 +180,5 @@
   </default_symbols>
 
 </processor_spec>
+
 
